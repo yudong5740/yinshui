@@ -32,7 +32,7 @@
         </view> 
     </view>
     <view>  
-     <button class="btn big secondary primary" bindtap="saveImg">保存</button>
+     <button class="btn big secondary primary" bindtap="saveImg">保   存</button>
      <button class="btn big secondary primary" bindtap="previewImg">预览</button>
     </view>
 </view>
