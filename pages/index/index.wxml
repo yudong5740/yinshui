@@ -1,0 +1,38 @@
+<view class="contains">
+    <view class="page_yd" bindtouchstart="touchImgstart"  bindtouchend="touchImgend" bindlongtap="onLongTrap">
+         <canvas class="canvas" style="width:100%;height:{{canvasH}}px" canvas-id="myCanvas"></canvas>
+         <view class="bg_btn"  wx:if="{{!bg_BTNS}}">
+             <image src="../../images/shuiyin.jpg"></image>
+         </view>
+    </view>
+    <view class="key_part">
+        <view class="section">
+           <view  class="section_word">
+             <text>水印文字 :</text> 
+           </view>
+           <view class="section_content" >
+               <input class="content_input" value="{{inputWord}}" auto-focus bindinput="bindKeyInput"  />
+           </view>
+        </view>  
+        <view class="section">
+           <view  class="section_word">
+             <text>水印颜色 :</text> 
+           </view>
+           <view class="section_content" bindtap="onColor_type">
+                <view wx:for="{{ColorType}}" wx:key="*this" style="{{'background:'+item[1]}}" id="{{item[0]}}"  class="{{currentColorIndex == item[0] ? 'circle actives': 'circle'}}"></view> 
+           </view>
+        </view>  
+         <view class="section">
+           <view  class="section_word">
+             <text>水印大小 :</text> 
+           </view>
+           <view class="section_content" >
+                  <slider  min="30" max="100" show-value bindchanging="onSize"/>
+           </view>
+        </view> 
+    </view>
+    <view>  
+     <button class="btn big secondary primary" bindtap="saveImg">保存</button>
+     <button class="btn big secondary primary" bindtap="previewImg">预览</button>
+    </view>
+</view>
